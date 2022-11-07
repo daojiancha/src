@@ -1,0 +1,250 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] construct_wrapper.1
+# In file /home/data/wangll22/src/model/backbone.py(199)/    def construct(self, inputs):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[1, 16, 4, 4]    # inputs
+        , %para2 : Ref[Tensor(F32)][2, 32, 1, 1]    # final.weight
+        , %para3 : Ref[Tensor(F32)][64, 32, 2, 2]    # up_concat1.up_conv.weight
+        , %para4 : Ref[Tensor(F32)][128, 64, 2, 2]    # up_concat2.up_conv.weight
+        , %para5 : Ref[Tensor(F32)][256, 128, 2, 2]    # up_concat3.up_conv.weight
+        , %para6 : Ref[Tensor(F32)][512, 256, 2, 2]    # up_concat4.up_conv.weight
+        , %para7 : Ref[Tensor(F32)][32, 16, 3, 3]    # conv0.convs.0.0.weight
+        , %para8 : Ref[Tensor(F32)][32, 32, 3, 3]    # conv0.convs.1.0.weight
+        , %para9 : Ref[Tensor(F32)][64, 32, 3, 3]    # conv1.convs.0.0.weight
+        , %para10 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv1.convs.1.0.weight
+        , %para11 : Ref[Tensor(F32)][128, 64, 3, 3]    # conv2.convs.0.0.weight
+        , %para12 : Ref[Tensor(F32)][128, 128, 3, 3]    # conv2.convs.1.0.weight
+        , %para13 : Ref[Tensor(F32)][512, 256, 3, 3]    # conv4.convs.0.0.weight
+        , %para14 : Ref[Tensor(F32)][512, 512, 3, 3]    # conv4.convs.1.0.weight
+        , %para15 : Ref[Tensor(F32)][256, 128, 3, 3]    # conv3.convs.0.0.weight
+        , %para16 : Ref[Tensor(F32)][256, 256, 3, 3]    # conv3.convs.1.0.weight
+        , %para17 : Ref[Tensor(F32)][32]    # conv0.convs.0.1.gamma
+        , %para18 : Ref[Tensor(F32)][32]    # conv0.convs.0.1.beta
+        , %para19 : Ref[Tensor(F32)][32]    # conv0.convs.0.1.moving_mean
+        , %para20 : Ref[Tensor(F32)][32]    # conv0.convs.0.1.moving_variance
+        , %para21 : Ref[Tensor(F32)][32]    # conv0.convs.1.1.gamma
+        , %para22 : Ref[Tensor(F32)][32]    # conv0.convs.1.1.beta
+        , %para23 : Ref[Tensor(F32)][32]    # conv0.convs.1.1.moving_mean
+        , %para24 : Ref[Tensor(F32)][32]    # conv0.convs.1.1.moving_variance
+        , %para25 : Ref[Tensor(F32)][64]    # conv1.convs.0.1.gamma
+        , %para26 : Ref[Tensor(F32)][64]    # conv1.convs.0.1.beta
+        , %para27 : Ref[Tensor(F32)][64]    # conv1.convs.0.1.moving_mean
+        , %para28 : Ref[Tensor(F32)][64]    # conv1.convs.0.1.moving_variance
+        , %para29 : Ref[Tensor(F32)][64]    # conv1.convs.1.1.gamma
+        , %para30 : Ref[Tensor(F32)][64]    # conv1.convs.1.1.beta
+        , %para31 : Ref[Tensor(F32)][64]    # conv1.convs.1.1.moving_mean
+        , %para32 : Ref[Tensor(F32)][64]    # conv1.convs.1.1.moving_variance
+        , %para33 : Ref[Tensor(F32)][128]    # conv2.convs.0.1.gamma
+        , %para34 : Ref[Tensor(F32)][128]    # conv2.convs.0.1.beta
+        , %para35 : Ref[Tensor(F32)][128]    # conv2.convs.0.1.moving_mean
+        , %para36 : Ref[Tensor(F32)][128]    # conv2.convs.0.1.moving_variance
+        , %para37 : Ref[Tensor(F32)][128]    # conv2.convs.1.1.gamma
+        , %para38 : Ref[Tensor(F32)][128]    # conv2.convs.1.1.beta
+        , %para39 : Ref[Tensor(F32)][128]    # conv2.convs.1.1.moving_mean
+        , %para40 : Ref[Tensor(F32)][128]    # conv2.convs.1.1.moving_variance
+        , %para41 : Ref[Tensor(F32)][512]    # conv4.convs.0.1.gamma
+        , %para42 : Ref[Tensor(F32)][512]    # conv4.convs.0.1.beta
+        , %para43 : Ref[Tensor(F32)][512]    # conv4.convs.0.1.moving_mean
+        , %para44 : Ref[Tensor(F32)][512]    # conv4.convs.0.1.moving_variance
+        , %para45 : Ref[Tensor(F32)][512]    # conv4.convs.1.1.gamma
+        , %para46 : Ref[Tensor(F32)][512]    # conv4.convs.1.1.beta
+        , %para47 : Ref[Tensor(F32)][512]    # conv4.convs.1.1.moving_mean
+        , %para48 : Ref[Tensor(F32)][512]    # conv4.convs.1.1.moving_variance
+        , %para49 : Ref[Tensor(F32)][256]    # conv3.convs.0.1.gamma
+        , %para50 : Ref[Tensor(F32)][256]    # conv3.convs.0.1.beta
+        , %para51 : Ref[Tensor(F32)][256]    # conv3.convs.0.1.moving_mean
+        , %para52 : Ref[Tensor(F32)][256]    # conv3.convs.0.1.moving_variance
+        , %para53 : Ref[Tensor(F32)][256]    # conv3.convs.1.1.gamma
+        , %para54 : Ref[Tensor(F32)][256]    # conv3.convs.1.1.beta
+        , %para55 : Ref[Tensor(F32)][256]    # conv3.convs.1.1.moving_mean
+        , %para56 : Ref[Tensor(F32)][256]    # conv3.convs.1.1.moving_variance
+        , %para57 : Ref[Tensor(F32)][32, 64, 3, 3]    # up_concat1.conv.convs.0.0.weight
+        , %para58 : Ref[Tensor(F32)][32, 32, 3, 3]    # up_concat1.conv.convs.1.0.weight
+        , %para59 : Ref[Tensor(F32)][64, 128, 3, 3]    # up_concat2.conv.convs.0.0.weight
+        , %para60 : Ref[Tensor(F32)][64, 64, 3, 3]    # up_concat2.conv.convs.1.0.weight
+        , %para61 : Ref[Tensor(F32)][128, 256, 3, 3]    # up_concat3.conv.convs.0.0.weight
+        , %para62 : Ref[Tensor(F32)][128, 128, 3, 3]    # up_concat3.conv.convs.1.0.weight
+        , %para63 : Ref[Tensor(F32)][256, 512, 3, 3]    # up_concat4.conv.convs.0.0.weight
+        , %para64 : Ref[Tensor(F32)][256, 256, 3, 3]    # up_concat4.conv.convs.1.0.weight
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_12(%para1)    #(Tensor(F32)[1, 16, 4, 4])    # fg_12=construct.12 #scope: Default
+#[CNode]18
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(213)/        return final/#[CNode]19
+}
+# order:
+#   1: construct_wrapper.1:[CNode]18{[0]: ValueNode<FuncGraph> construct.12, [1]: inputs}
+#   2: construct_wrapper.1:[CNode]19{[0]: ValueNode<Primitive> Return, [1]: [CNode]18}
+
+
+# [No.2] construct.12
+# In file /home/data/wangll22/src/model/backbone.py(199)/    def construct(self, inputs):/
+funcgraph fg_12[fg_1](
+        %para65 : Tensor(F32)[1, 16, 4, 4]    # inputs
+    ) {
+    %1 : Tensor(F32)[1, 32, 4, 4] = FuncGraph::fg_20(%para65)    #(Tensor(F32)[1, 16, 4, 4])    # fg_20=construct.20 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(200)/        x0 = self.conv0(inputs)                   # channel = filters[0]/#x0
+    %2 : Tensor(F32)[1, 32, 2, 2] = FuncGraph::fg_21(%1)    #(Tensor(F32)[1, 32, 4, 4])    # fg_21=construct.21 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(201)/        x1 = self.conv1(self.maxpool(x0))        # channel = filters[1]/#[CNode]22
+    %3 : Tensor(F32)[1, 64, 2, 2] = FuncGraph::fg_23(%2)    #(Tensor(F32)[1, 32, 2, 2])    # fg_23=construct.23 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(201)/        x1 = self.conv1(self.maxpool(x0))        # channel = filters[1]/#x1
+    %4 : Tensor(F32)[1, 64, 1, 1] = FuncGraph::fg_21(%3)    #(Tensor(F32)[1, 64, 2, 2])    # fg_21=construct.21 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(202)/        x2 = self.conv2(self.maxpool(x1))        # channel = filters[2]/#[CNode]24
+    %5 : Tensor(F32)[1, 128, 1, 1] = FuncGraph::fg_25(%4)    #(Tensor(F32)[1, 64, 1, 1])    # fg_25=construct.25 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(202)/        x2 = self.conv2(self.maxpool(x1))        # channel = filters[2]/#x2
+    %6 : Tensor(F32)[1, 128, 1, 1] = FuncGraph::fg_21(%5)    #(Tensor(F32)[1, 128, 1, 1])    # fg_21=construct.21 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(203)/        x3 = self.conv3(self.maxpool(x2))        # channel = filters[3]/#[CNode]26
+    %7 : Tensor(F32)[1, 256, 1, 1] = FuncGraph::fg_27(%6)    #(Tensor(F32)[1, 128, 1, 1])    # fg_27=construct.27 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(203)/        x3 = self.conv3(self.maxpool(x2))        # channel = filters[3]/#x3
+    %8 : Tensor(F32)[1, 256, 1, 1] = FuncGraph::fg_21(%7)    #(Tensor(F32)[1, 256, 1, 1])    # fg_21=construct.21 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(204)/        x4 = self.conv4(self.maxpool(x3))        # channel = filters[4]/#[CNode]28
+    %9 : Tensor(F32)[1, 512, 1, 1] = FuncGraph::fg_29(%8)    #(Tensor(F32)[1, 256, 1, 1])    # fg_29=construct.29 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(204)/        x4 = self.conv4(self.maxpool(x3))        # channel = filters[4]/#x4
+
+#------------------------> 1
+    %10 = FuncGraph::fg_30(%9, %7)    #(Tensor(F32)[1, 512, 1, 1], Tensor(F32)[1, 256, 1, 1])    # fg_30=construct.30 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(206)/        up4 = self.up_concat4(x4, x3)/#up4
+    %11 = FuncGraph::fg_31(%10, %5)    #(Undefined, Tensor(F32)[1, 128, 1, 1])    # fg_31=construct.31 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(207)/        up3 = self.up_concat3(up4, x2)/#up3
+    %12 = FuncGraph::fg_32(%11, %3)    #(Undefined, Tensor(F32)[1, 64, 2, 2])    # fg_32=construct.32 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(208)/        up2 = self.up_concat2(up3, x1)/#up2
+    %13 = FuncGraph::fg_33(%12, %1)    #(Undefined, Tensor(F32)[1, 32, 4, 4])    # fg_33=construct.33 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(209)/        up1 = self.up_concat1(up2, x0)/#up1
+    %14 = FuncGraph::fg_34(%13)    #(Undefined)    # fg_34=construct.34 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(211)/        final = self.final(up1)/#final
+    Primitive::Return{prim_type=1}(%14)    #(Undefined) #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(213)/        return final/#[CNode]35
+}
+# order:
+#   1: construct.12:x0{[0]: ValueNode<FuncGraph> construct.20, [1]: inputs}
+#   2: construct.12:[CNode]22{[0]: ValueNode<FuncGraph> construct.21, [1]: x0}
+#   3: construct.12:x1{[0]: ValueNode<FuncGraph> construct.23, [1]: [CNode]22}
+#   4: construct.12:[CNode]24{[0]: ValueNode<FuncGraph> construct.21, [1]: x1}
+#   5: construct.12:x2{[0]: ValueNode<FuncGraph> construct.25, [1]: [CNode]24}
+#   6: construct.12:[CNode]26{[0]: ValueNode<FuncGraph> construct.21, [1]: x2}
+#   7: construct.12:x3{[0]: ValueNode<FuncGraph> construct.27, [1]: [CNode]26}
+#   8: construct.12:[CNode]28{[0]: ValueNode<FuncGraph> construct.21, [1]: x3}
+#   9: construct.12:x4{[0]: ValueNode<FuncGraph> construct.29, [1]: [CNode]28}
+#  10: construct.12:up4{[0]: ValueNode<FuncGraph> construct.30, [1]: x4, [2]: x3}
+#  11: construct.12:up3{[0]: ValueNode<FuncGraph> construct.31, [1]: up4, [2]: x2}
+#  12: construct.12:up2{[0]: ValueNode<FuncGraph> construct.32, [1]: up3, [2]: x1}
+#  13: construct.12:up1{[0]: ValueNode<FuncGraph> construct.33, [1]: up2, [2]: x0}
+#  14: construct.12:final{[0]: ValueNode<FuncGraph> construct.34, [1]: up1}
+#  15: construct.12:[CNode]35{[0]: ValueNode<Primitive> Return, [1]: final}
+
+
+# [No.3] construct.13
+# In file /home/data/wangll22/src/model/backbone.py(78)/    def construct(self, high_feature, *low_feature):/
+funcgraph fg_13[fg_1](
+        %para66 : Tensor(F32)[1, 512, 1, 1]    # high_feature
+        , %para67 : Tensor(F32)[1, 256, 1, 1]    # low_feature0
+    ) {
+    %1 : Bool = FuncGraph::fg_36(Bool(1))    #(Bool)    # fg_36=bool_.36 #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(79)/        if self.use_deconv:/#[CNode]37
+    %2 : Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_38, FuncGraph::fg_39)    #(Bool, Func, Func)    # fg_38=✓construct.38, fg_39=✗construct.39 #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(79)/        if self.use_deconv:/#[CNode]40
+    %3 : Tensor(F32)[1, 256, 2, 2] = %2() #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(79)/        if self.use_deconv:/#[CNode]41
+
+#------------------------> 2
+    %4 = FuncGraph::fg_14(%3)    #(Tensor(F32)[1, 256, 2, 2])    # fg_14=↓construct.14 #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(206)/        up4 = self.up_concat4(x4, x3)/#[CNode]42
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(79)/        if self.use_deconv:/#[CNode]43
+}
+# order:
+#   1: construct.13:[CNode]37{[0]: ValueNode<FuncGraph> bool_.36, [1]: ValueNode<BoolImm> true}
+#   2: construct.13:[CNode]40{[0]: ValueNode<Primitive> Switch, [1]: [CNode]37, [2]: ValueNode<FuncGraph> ✓construct.38, [3]: ValueNode<FuncGraph> ✗construct.39}
+#   3: construct.13:[CNode]41{[0]: [CNode]40}
+#   4: construct.13:[CNode]42{[0]: ValueNode<FuncGraph> ↓construct.14, [1]: [CNode]41}
+#   5: construct.13:[CNode]43{[0]: ValueNode<Primitive> Return, [1]: [CNode]42}
+
+
+# [No.4] ↓construct.14
+# In file /home/data/wangll22/src/model/backbone.py(79)/        if self.use_deconv:/
+funcgraph fg_14[fg_13](
+        %para68 : Tensor(F32)[1, 256, 2, 2]    # Φoutput
+    ) {
+
+#------------------------> 3
+    %1 = FuncGraph::fg_15(I64(0), %para68)    #(I64, Tensor(F32)[1, 256, 2, 2])    # fg_15=⤾↓construct.15 #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]44
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]45
+}
+# order:
+#   1: ↓construct.14:[CNode]46{[0]: ValueNode<FuncGraph> ms_len.47, [1]: [CNode]48}
+#   2: ↓construct.14:[CNode]44{[0]: ValueNode<FuncGraph> ⤾↓construct.15, [1]: ValueNode<Int64Imm> 0, [2]: Φoutput}
+#   3: ↓construct.14:[CNode]45{[0]: ValueNode<Primitive> Return, [1]: [CNode]44}
+
+
+# [No.5] ⤾↓construct.15
+# In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/
+funcgraph fg_15[fg_14](
+        %para69 : I64    # @[CNode]16
+        , %para70 : Tensor(F32)[1, 256, 2, 2]    # Φoutput
+    ) {
+    %1 : $(construct.13):Tuple[Tensor(F32)] = Primitive::MakeTuple{prim_type=1}(%para67)    #(Tensor(F32)[1, 256, 1, 1]) #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]48
+    %2 : $(↓construct.14):I64 = FuncGraph::fg_47(%1)    #(Tuple[Tensor(F32)])    # fg_47=ms_len.47 #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]46
+    %3 : Bool = MultitypeFuncGraph::less{(Tensor, Number), (Number, Tensor), (Tensor, Tensor), (Number, Number)}(%para69, %2)    #(I64, I64) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]49
+    %4 : Func = Primitive::Switch{prim_type=1}(%3, FuncGraph::fg_17, FuncGraph::fg_50)    #(Bool, Func, Func)    # fg_17=⥁↓construct.17, fg_50=↓↓construct.50 #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]51
+
+#------------------------> 4
+    %5 = %4() #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]52
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]53
+}
+# order:
+#   1: ⤾↓construct.15:[CNode]49{[0]: ValueNode<MultitypeFuncGraph> less.54, [1]: @[CNode]16, [2]: [CNode]46}
+#   2: ⤾↓construct.15:[CNode]51{[0]: ValueNode<Primitive> Switch, [1]: [CNode]49, [2]: ValueNode<FuncGraph> ⥁↓construct.17, [3]: ValueNode<FuncGraph> ↓↓construct.50}
+#   3: ⤾↓construct.15:[CNode]52{[0]: [CNode]51}
+#   4: ⤾↓construct.15:[CNode]53{[0]: ValueNode<Primitive> Return, [1]: [CNode]52}
+
+
+# [No.6] ⥁↓construct.17
+# In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/
+funcgraph fg_17[fg_15](
+) {
+    %1 : I64 = MultitypeFuncGraph::add{(RowTensor, Tensor), (NoneType, NoneType), (Tensor, Tensor), (List, List), (Tuple, Tuple), (Tensor, List), (Tensor, Tuple), (List, Tensor), (Tuple, Tensor), (Tensor, Number), (Number, Tensor), (String, String), (Number, Number)}(%para69, I64(1))    #(I64, I64) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]16
+    %2 : I64 = Primitive::stop_gradient{prim_type=1}(%1)    #(I64) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(206)/        up4 = self.up_concat4(x4, x3)/#[CNode]55
+    %3 : $(construct.13):Tuple[Tensor(F32)] = Primitive::MakeTuple{prim_type=1}(%para67)    #(Tensor(F32)[1, 256, 1, 1]) #scope: Default
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]48
+    %4 : Tensor(F32)[1, 256, 1, 1] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, %para69)    #(Tuple[Tensor(F32)], I64) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#feature
+    %5 : Tuple[Tensor(F32)*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%para70, %4)    #(Tensor(F32)[1, 256, 2, 2], Tensor(F32)[1, 256, 1, 1]) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(86)/            output = self.concat((output, feature))/#[CNode]56
+
+#------------------------> 5
+    %6 = DoSignaturePrimitive::S-Prim-Concat{prim_type=1}[axis=I64(1), N=I64(2), inputNums=I64(2)](%5)    #(Tuple[Tensor(F32)*2]) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(86)/            output = self.concat((output, feature))/#output
+    %7 = FuncGraph::fg_15(%1, %6)    #(I64, Undefined)    # fg_15=⤾↓construct.15 #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]57
+    %8 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%7, %2)    #(Undefined, I64) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(206)/        up4 = self.up_concat4(x4, x3)/#[CNode]58
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/up_concat4-UnetUp
+      # In file /home/data/wangll22/src/model/backbone.py(85)/        for feature in low_feature:/#[CNode]59
+}
+# order:
+#   1: ⥁↓construct.17:feature{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]48, [2]: @[CNode]16}
+#   2: ⥁↓construct.17:[CNode]16{[0]: ValueNode<MultitypeFuncGraph> add.9, [1]: @[CNode]16, [2]: ValueNode<Int64Imm> 1}
+#   3: ⥁↓construct.17:[CNode]56{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: Φoutput, [2]: feature}
+#   4: ⥁↓construct.17:output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Concat, [1]: [CNode]56}
+#   5: ⥁↓construct.17:[CNode]57{[0]: ValueNode<FuncGraph> ⤾↓construct.15, [1]: [CNode]16, [2]: output}
+#   6: ⥁↓construct.17:[CNode]59{[0]: ValueNode<Primitive> Return, [1]: [CNode]58}
+
+
+#===============================================================================
+# num of function graphs in stack: 6/7 (Ignored 1 internal frames).
